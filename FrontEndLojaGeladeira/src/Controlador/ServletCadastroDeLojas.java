@@ -12,21 +12,16 @@ import Fachada.Fachada;
 /**
  * Servlet implementation class ServletCadastroDeLojas
  */
-@WebServlet("/ServletCadastroDeLojas")
+@WebServlet("/servCaLo")
 public class ServletCadastroDeLojas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	Fachada fachada = new Fachada();
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("nome: " + request.getParameter("nomeDaLoja"));
-		System.out.println("icon: " + request.getParameter("iconeDaLoja"));
-		
-		fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), request.getParameter("iconeDaLoja"));
-		
-		request.setAttribute("lojas", fachada.buscarTodasLojas());
+		Fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), request.getParameter("iconeDaLoja"));
+
+		request.setAttribute("lojas", Fachada.buscarTodasLojas());
 		request.getRequestDispatcher("CadastroDaLoja.jsp").forward(request, response);
 	}
 }

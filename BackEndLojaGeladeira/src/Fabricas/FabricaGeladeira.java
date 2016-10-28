@@ -1,7 +1,5 @@
 package Fabricas;
 
-import java.util.List;
-
 import Entidades.*;
 
 public class FabricaGeladeira {
@@ -13,9 +11,8 @@ public class FabricaGeladeira {
 		return new FabricaGeladeira();
 	}
 
-	public  Geladeira retornaGeladeira(String nome, String marca, String fabricante, 
-			List<Caracteristica> caracteristicas, List<String> fotos) {
-		return Geladeira.nova(nome, marca, fabricante, caracteristicas, fotos);
+	public  Geladeira retornaGeladeira(String nome, String marca, String fabricante) {
+		return Geladeira.nova(nome, marca, fabricante);
 	}
 
 }
