@@ -15,7 +15,7 @@ public class FabricaLojaComGeladeiras {
 		return new FabricaLojaComGeladeiras();
 	}
 	
-	public LojaComGeladeiras retornaFabricaLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras){
+	public LojaComGeladeiras retornaLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras){
 		return LojaComGeladeiras.nova(loja, geladeiras);
 	}
 	

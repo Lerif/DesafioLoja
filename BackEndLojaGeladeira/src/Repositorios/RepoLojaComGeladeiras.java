@@ -38,7 +38,7 @@ public class RepoLojaComGeladeiras {
 		return repoLojaComGeladeiras;
 	}
 	
-	public void remover(LojaComGeladeiras lojaComGeladeirasParaRemover){
-		repoLojaComGeladeiras.remove(lojaComGeladeirasParaRemover);
+	public boolean remover(LojaComGeladeiras lojaComGeladeirasParaRemover){
+		return repoLojaComGeladeiras.remove(lojaComGeladeirasParaRemover);
 	}
 }
