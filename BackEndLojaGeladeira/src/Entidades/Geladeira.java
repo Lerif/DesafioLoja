@@ -2,23 +2,25 @@ package Entidades;
 
 import java.util.List;
 
-import Agregadores.Caracteristicas;
-
 public class Geladeira {
 	private String nome;
 	private String marca;
 	private String fabricante;
+	private List<Caracteristica> caracteristicas;
+
 	private List<String> fotos;
 
-	private Geladeira(String nome, String marca, String fabricante, List<String> fotos) {
+	private Geladeira(String nome, String marca, String fabricante,List<Caracteristica> caracteristicas, List<String> fotos) {
 		this.nome = nome;
 		this.marca = marca;
 		this.fabricante = fabricante;
+		this.caracteristicas = caracteristicas;
 		this.fotos = fotos;
 	}
 
-	public static Geladeira nova(String nome, String marca, String fabricante, List<String> fotos) {
-		return new Geladeira(nome, marca, fabricante, fotos);
+	public static Geladeira nova(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas,
+			List<String> fotos) {
+		return new Geladeira(nome, marca, fabricante, caracteristicas, fotos);
 	}
 
 	public String getNome() {
@@ -52,5 +54,12 @@ public class Geladeira {
 	public void setFotos(List<String> fotos) {
 		this.fotos = fotos;
 	}
+	
+	public List<Caracteristica> getCaracteristicas() {
+		return caracteristicas;
+	}
 
+	public void setCaracteristicas(List<Caracteristica> caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
 }

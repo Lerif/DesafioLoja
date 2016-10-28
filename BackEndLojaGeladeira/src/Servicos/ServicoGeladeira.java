@@ -24,7 +24,4 @@ public class ServicoGeladeira {
 		repoGeladeira.inserir(geladeira);
 		return geladeira;
 	}
-	
-	
-	
 }
