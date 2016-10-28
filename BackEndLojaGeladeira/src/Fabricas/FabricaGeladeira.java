@@ -2,7 +2,6 @@ package Fabricas;
 
 import java.util.List;
 
-import Agregadores.Caracteristicas;
 import Entidades.*;
 
 public class FabricaGeladeira {
