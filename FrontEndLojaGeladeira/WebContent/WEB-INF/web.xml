@@ -14,10 +14,13 @@
     <url-pattern>/CadastroLojas</url-pattern>
   </servlet-mapping>
   
-  <context-param>
-  	<description>Onde imagem esta</description>
-  	<param-name>imagem-upload</param-name>
-  	<param-value>/imagens</param-value>
-  </context-param>
+    <servlet>
+    <servlet-name>CadastroGela</servlet-name>
+    <servlet-class>Controlador.CadastroGela</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroGela</servlet-name>
+    <url-pattern>/CadastroGeladeiras</url-pattern>
+  </servlet-mapping>
   
 </web-app>
