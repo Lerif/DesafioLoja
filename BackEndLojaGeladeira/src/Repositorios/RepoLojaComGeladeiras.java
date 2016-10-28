@@ -38,20 +38,7 @@ public class RepoLojaComGeladeiras {
 		return repoLojaComGeladeiras;
 	}
 	
-	/**
-	 * Remove LojaComGeladeiras da lista de LojaComGeladeiras
-	 * Retorna:
-	 *  Se sucesso retorna LojaComGeladeiras removida 
-	 *  Se falhar retorna null
-	 * */
-	public LojaComGeladeiras remover(LojaComGeladeiras lojaComGeladeirasParaRemover){
-		int indice = 0;
-		
-		for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
-			if (lojaComGeladeiras.equals(lojaComGeladeirasParaRemover.getLoja().getNome())){
-				return repoLojaComGeladeiras.remove(indice);
-			}
-		}
-		return null;
+	public void remover(LojaComGeladeiras lojaComGeladeirasParaRemover){
+		repoLojaComGeladeiras.remove(lojaComGeladeirasParaRemover);
 	}
 }

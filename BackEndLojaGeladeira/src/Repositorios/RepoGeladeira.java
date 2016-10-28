@@ -39,20 +39,7 @@ public class RepoGeladeira {
 		return repoGeladeiras;
 	}
 	
-	/**
-	 * Remove geladeira da lista de geladeiras
-	 * Retorna:
-	 *  Se sucesso retorna geladeira removida 
-	 *  Se falhar retorna null
-	 * */
-	public Geladeira remover(Geladeira geladeiraParaRemover){
-		int indice = 0;
-		
-		for(Geladeira geladeira : repoGeladeiras){
-			if (geladeira.equals(geladeiraParaRemover.getNome())){
-				return repoGeladeiras.remove(indice);
-			}
-		}
-		return null;
+	public void remover(Geladeira geladeiraParaRemover){
+		repoGeladeiras.remove(geladeiraParaRemover);
 	}
 }

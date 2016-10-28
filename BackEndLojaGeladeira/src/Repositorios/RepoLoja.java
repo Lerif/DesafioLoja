@@ -39,21 +39,8 @@ public class RepoLoja {
 		return repoLojas;
 	}
 	
-	/**
-	 * Remove loja da lista de lojas
-	 * Retorna:
-	 *  Se sucesso retorna loja removida 
-	 *  Se falhar retorna null
-	 * */
-	public Loja remover(Loja lojaParaRemover){
-		int indice = 0;
-		
-		for(Loja loja: repoLojas){
-			if(loja.equals(lojaParaRemover.getNome())){
-				return repoLojas.remove(indice);
-			}
-		}
-		return null;
+	public void remover(Loja lojaParaRemover){
+		repoLojas.remove(lojaParaRemover);
 	}
 	
 	

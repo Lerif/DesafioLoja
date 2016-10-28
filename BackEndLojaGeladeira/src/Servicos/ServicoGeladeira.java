@@ -10,8 +10,12 @@ public class ServicoGeladeira {
 
 	public RepoGeladeira repoGeladeira =  RepoGeladeira.novo(); 
 	
-	public ServicoGeladeira(){
+	private ServicoGeladeira(){
 		
+	}
+	
+	public static ServicoGeladeira novo(){
+		return new ServicoGeladeira();
 	}
 	
 	public Geladeira criarGeladeira(String nome, String marca, String fabricante, List<String> fotos){
@@ -20,4 +24,7 @@ public class ServicoGeladeira {
 		repoGeladeira.inserir(geladeira);
 		return geladeira;
 	}
+	
+	
+	
 }
