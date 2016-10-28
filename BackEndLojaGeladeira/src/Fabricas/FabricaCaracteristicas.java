@@ -13,7 +13,7 @@ public class FabricaCaracteristicas {
 	}
 
 	public Caracteristicas retornaCaracteristicas() {
-		return Caracteristicas.NovaCaracteristicas();
+		return Caracteristicas.novaCaracteristicas();
 	}
 
 	public Caracteristica retornaCaracteristica(String tipo, Boolean existe) {

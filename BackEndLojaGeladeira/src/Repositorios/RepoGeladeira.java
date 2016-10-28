@@ -25,21 +25,23 @@ public class RepoGeladeira {
 		return false;
 	}
 	
-	public Geladeira selecionar(Geladeira geladeiraParaSelecionar){
+	public List<Geladeira> selecionar(String nomeDaGeladeiraParaSelecionar){
+		
+		List<Geladeira> geladeirasComNomeSelecionado = new ArrayList<Geladeira>();
 		
 		for(Geladeira geladeira : repoGeladeiras){
-			if(geladeira.equals(geladeiraParaSelecionar.getNome())){
-				return geladeira;
+			if(geladeira.equals(nomeDaGeladeiraParaSelecionar)){
+				geladeirasComNomeSelecionado.add(geladeira);
 			}
 		}
-		return null;
+		return geladeirasComNomeSelecionado;
 	}
 	
 	public List<Geladeira> selecionarTudo(){
 		return repoGeladeiras;
 	}
 	
-	public void remover(Geladeira geladeiraParaRemover){
-		repoGeladeiras.remove(geladeiraParaRemover);
+	public boolean remover(Geladeira geladeiraParaRemover){
+		return repoGeladeiras.remove(geladeiraParaRemover);
 	}
 }

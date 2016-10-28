@@ -10,11 +10,11 @@ public class Caracteristicas {
 	private Caracteristicas() {
 	}
 
-	public static Caracteristicas NovaCaracteristicas() {
+	public static Caracteristicas novaCaracteristicas() {
 		return new Caracteristicas();
 	}
 
-	public Boolean Inserir(Caracteristica c) {
+	public boolean inserir(Caracteristica c) {
 		for (Caracteristica car : listaCaracteristica) {
 			if (car.getTipo().equals(c.getTipo()))
 				return false;
@@ -23,7 +23,7 @@ public class Caracteristicas {
 		return true;
 	}
 
-	public Boolean Remover(String tipo) {
+	public boolean remover(String tipo) {
 		for (Caracteristica car : listaCaracteristica) {
 			if (car.getTipo().equals(tipo))
 				listaCaracteristica.remove(car);

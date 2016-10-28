@@ -7,22 +7,21 @@ import java.util.List;
 
 import org.junit.Test;
 
+import Entidades.Caracteristica;
 import Entidades.Geladeira;
+import Fachada.Fachada;
 import Repositorios.RepoGeladeira;
 
 public class Teste {
 
 	@Test
-	public void test_metodoFachada() {
-		fail("Not yet implemented");
+	public void test_fachada_criarNovaGeladeira() {
+		Fachada fachada = new Fachada();
+		
+		List<Caracteristica> caracteristicas = 
+		
+		fachada.criarNovaGeladeira("", "", "", );
 	}
 	
-	@Test
-	public void test_inserirGeladeira(){
-		RepoGeladeira rg = new RepoGeladeira();
-		List <String>list = new ArrayList<>();
-		Geladeira geladeira = Geladeira.nova("", "", "", list);
-		assertTrue(rg.inserir(geladeira));
-	}
 
 }

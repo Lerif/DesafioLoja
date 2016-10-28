@@ -25,10 +25,10 @@ public class RepoLoja {
 		return false;
 	}
 	
-	public Loja selecionar(Loja lojaParaSelecionar){
+	public Loja selecionar(String lojaParaSelecionar){
 		
 		for (Loja loja : repoLojas){
-			if(repoLojas.equals(lojaParaSelecionar.getNome())){
+			if(repoLojas.equals(lojaParaSelecionar)){
 				return loja;
 			}
 		}
@@ -39,8 +39,8 @@ public class RepoLoja {
 		return repoLojas;
 	}
 	
-	public void remover(Loja lojaParaRemover){
-		repoLojas.remove(lojaParaRemover);
+	public boolean remover(Loja lojaParaRemover){
+		return repoLojas.remove(lojaParaRemover);
 	}
 	
 	

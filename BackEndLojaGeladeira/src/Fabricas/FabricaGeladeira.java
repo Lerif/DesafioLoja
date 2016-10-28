@@ -13,8 +13,9 @@ public class FabricaGeladeira {
 		return new FabricaGeladeira();
 	}
 
-	public  Geladeira retornaGeladeira(String nome, String marca, String fabricante, List<String> fotos) {
-		return Geladeira.nova(nome, marca, fabricante, fotos);
+	public  Geladeira retornaGeladeira(String nome, String marca, String fabricante, 
+			List<Caracteristica> caracteristicas, List<String> fotos) {
+		return Geladeira.nova(nome, marca, fabricante, caracteristicas, fotos);
 	}
 
 }

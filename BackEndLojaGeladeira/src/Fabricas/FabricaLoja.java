@@ -7,12 +7,11 @@ public class FabricaLoja {
 	private FabricaLoja() {
 	}
 
-	public FabricaLoja nova() {
+	public static FabricaLoja nova() {
 		return new FabricaLoja();
 	}
 
 	public Loja retornaLoja(String nome, String foto) {
 		return Loja.novaLoja(nome, foto);
 	}
-
 }
