@@ -7,16 +7,19 @@ import java.util.List;
 
 import org.junit.Test;
 
+import Agregadores.LojaComGeladeiras;
 import Entidades.Caracteristica;
 import Entidades.Geladeira;
+import Entidades.Loja;
 import Fachada.Fachada;
 import Repositorios.RepoGeladeira;
 
 public class Teste {
 	
+	// Constantes Geladeira
 	static final String NOME_GELADEIRA = "x95";
-	static final String MARCA_GELADEIRA = "Brastemp";
-	static final String FABRICANTE_GELADEIRA = "Brittany";
+	static final String MARCA_GELADEIRA = "Brastempo";
+	static final String FABRICANTE_GELADEIRA = "Brittanyng";
 	static final String CARACTERISTICA1_GELADEIRA = "Frost-free";
 	static final String CARACTERISTICA2_GELADEIRA = "azul";
 	static final String CARACTERISTICA3_GELADEIRA = "multi-portas";
@@ -25,8 +28,14 @@ public class Teste {
 	static final String FOTO2_GELADEIRA = "foto2";
 	static final String FOTO3_GELADEIRA = "foto3";
 	
+	// Constantes Loja
+	static final String NOME_LOJA = "anericanas";
+	static final String ICONE_LOJA = "icone_loja";
+
+	
 	List<Caracteristica> caracteristicas = new ArrayList<Caracteristica>();
 	List<String> fotos = new ArrayList<String>();
+	Geladeira geladeira;
 
 	Fachada fachada = new Fachada();
 	
@@ -151,7 +160,34 @@ public class Teste {
 		assert(geladeiras.isEmpty());
 	}
 	
-	
-	
+	@Test
+	public void test_fachada_criarNovaLojaComGeladeiras() {
+		Loja loja = Loja.novaLoja(NOME_LOJA, ICONE_LOJA);
+		List<Geladeira> geladeiras = new ArrayList<Geladeira>();
+
+		geladeira = fachada.criarNovaGeladeira(NOME_GELADEIRA+0, MARCA_GELADEIRA, FABRICANTE_GELADEIRA,
+				caracteristicas, fotos);
+		geladeiras.add(geladeira);
+		
+		geladeira = fachada.criarNovaGeladeira(NOME_GELADEIRA+1, MARCA_GELADEIRA, FABRICANTE_GELADEIRA,
+				caracteristicas, fotos);
+		geladeiras.add(geladeira);
+		
+		
+		LojaComGeladeiras lojaComGeladeiras = fachada.criarNovaLojaComGeladeiras(loja, geladeiras);
+		
+		Loja lojaRetornada = lojaComGeladeiras.getLoja();
+		assert(lojaRetornada.getNome().equals(NOME_LOJA));
+		assert(lojaRetornada.getFoto().equals(ICONE_LOJA));
+		
+		List<Geladeira> geladeirasRetornada = lojaComGeladeiras.getListaGeladeiras();
+		
+		int indice = 0;
+		for (Geladeira gel : geladeirasRetornada){
+			assert(gel.getNome().equals(NOME_GELADEIRA+indice));
+			assert(gel.getNome().equals(MARCA_GELADEIRA));
+			assert(gel.getNome().equals(FABRICANTE_GELADEIRA));
+		}
+	}
 
 }
