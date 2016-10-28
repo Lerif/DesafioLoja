@@ -5,7 +5,6 @@ import java.util.List;
 import Agregadores.LojaComGeladeiras;
 import Entidades.Geladeira;
 import Entidades.Loja;
-import Fabricas.FabricaGeladeira;
 import Fabricas.FabricaLojaComGeladeiras;
 import Repositorios.RepoLojaComGeladeiras;
 
@@ -27,11 +26,11 @@ public class ServicoLojaComGeladeiras {
 		return lojaComGeladeiras;
 	}
 	
-	public List<LojaComGeladeiras> buscarTodasGelardeiras(){
+	public List<LojaComGeladeiras> buscarTodasLojaComGeladeiras(){
 		return repoLojaComGeladeiras.selecionarTudo();
 	}
 	
-	public LojaComGeladeiras buscarGeladeira(LojaComGeladeiras nomeDaLojaComGeladeiras){
+	public LojaComGeladeiras buscarLojaComGeladeira(LojaComGeladeiras nomeDaLojaComGeladeiras){
 		return repoLojaComGeladeiras.selecionar(nomeDaLojaComGeladeiras);
 	}
 	

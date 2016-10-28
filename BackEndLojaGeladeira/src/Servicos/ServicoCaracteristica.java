@@ -12,7 +12,7 @@ public class ServicoCaracteristica {
 	private ServicoCaracteristica(){
 	}
 	
-	public ServicoCaracteristica nova(){
+	public static ServicoCaracteristica nova(){
 		return new ServicoCaracteristica();
 	}
 	
@@ -31,8 +31,8 @@ public class ServicoCaracteristica {
 		return repoCaracteristica.selecionar(nomeDaCaracteristica);
 	}
 	
-	public boolean excluirGeladeira(Caracteristica caracteristicadeira){
-		return repoCaracteristica.remover(caracteristicadeira);
+	public boolean excluirCaracteristica(Caracteristica caracteristica){
+		return repoCaracteristica.remover(caracteristica);
 	}
 	
 }
