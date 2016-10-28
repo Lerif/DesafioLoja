@@ -10,13 +10,12 @@ public class FabricaGeladeira {
 	private FabricaGeladeira() {
 	}
 
-	public FabricaGeladeira nova() {
+	public static FabricaGeladeira nova() {
 		return new FabricaGeladeira();
 	}
 
-	public Geladeira retornaGeladeira(String nome, String marca, String fabricante, Caracteristicas lista,
-			List<String> fotos) {
-		return Geladeira.nova(nome, marca, fabricante, lista, fotos);
+	public  Geladeira retornaGeladeira(String nome, String marca, String fabricante, List<String> fotos) {
+		return Geladeira.nova(nome, marca, fabricante, fotos);
 	}
 
 }

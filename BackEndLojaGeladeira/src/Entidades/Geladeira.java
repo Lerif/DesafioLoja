@@ -8,19 +8,17 @@ public class Geladeira {
 	private String nome;
 	private String marca;
 	private String fabricante;
-	private Caracteristicas lista;
 	private List<String> fotos;
 
-	private Geladeira(String nome, String marca, String fabricante, Caracteristicas lista, List<String> fotos) {
+	private Geladeira(String nome, String marca, String fabricante, List<String> fotos) {
 		this.nome = nome;
 		this.marca = marca;
 		this.fabricante = fabricante;
-		this.lista = lista;
 		this.fotos = fotos;
 	}
 
-	public static Geladeira nova(String nome, String marca, String fabricante, Caracteristicas lista, List<String> fotos) {
-		return new Geladeira(nome, marca, fabricante, lista, fotos);
+	public static Geladeira nova(String nome, String marca, String fabricante, List<String> fotos) {
+		return new Geladeira(nome, marca, fabricante, fotos);
 	}
 
 	public String getNome() {
@@ -45,14 +43,6 @@ public class Geladeira {
 
 	public void setFabricante(String fabricante) {
 		this.fabricante = fabricante;
-	}
-
-	public Caracteristicas getLista() {
-		return lista;
-	}
-
-	public void setLista(Caracteristicas lista) {
-		this.lista = lista;
 	}
 
 	public List<String> getFotos() {
