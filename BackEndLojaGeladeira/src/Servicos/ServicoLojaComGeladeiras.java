@@ -16,7 +16,7 @@ public class ServicoLojaComGeladeiras {
 	private ServicoLojaComGeladeiras(){
 	}
 	
-	public ServicoLojaComGeladeiras novo(){
+	public static ServicoLojaComGeladeiras novo(){
 		return new ServicoLojaComGeladeiras();
 	}
 	
