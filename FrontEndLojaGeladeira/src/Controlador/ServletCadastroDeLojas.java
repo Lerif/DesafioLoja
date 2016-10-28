@@ -1,11 +1,14 @@
 package Controlador;
 
 import java.io.IOException;
+import java.util.logging.Level;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import Fachada.Fachada;
 
@@ -20,11 +23,13 @@ public class ServletCadastroDeLojas extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-
-		System.out.println("nome: " + request.getParameter("nomeDaLoja"));
-		System.out.println("icon: " + request.getParameter("iconeDaLoja"));
 		
 		fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), request.getParameter("iconeDaLoja"));
+		atualizarTabelaLojas(request, response);
+	}
+	
+	protected void atualizarTabelaLojas (HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		
 		request.setAttribute("lojas", fachada.buscarTodasLojas());
 		request.getRequestDispatcher("CadastroDaLoja.jsp").forward(request, response);

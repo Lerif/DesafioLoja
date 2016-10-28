@@ -16,6 +16,7 @@
 
 	<h2 align="center">Preencha o formulário abaixo para sua cadastrar loja</h2>
 	<br />
+	
 
 	<form name="CadastroLoja" id="formularioCadastro" action="ServletCadastroDeLojas" method="post">
 
@@ -30,6 +31,7 @@
 					<td align="left"><input type="text" name="nomeDaLoja"></td>
 					<td><label for="imagem">Icone da loja:</label></td>
 					<td><input id="idIcone" type="file" name="iconeDaLoja"></td>
+					<td><button onClick="voltar()" >Enviar Foto</button></td>
 			</table>
 		</fieldset>
 		<br>
@@ -52,11 +54,10 @@
 					<td><img src=${loja.foto} width="18px" lenght="18px"></td>
 				</tr>
 			</c:forEach>
-
 	</table>
-	
 </body>
 	<script>
+		
 		function cadastrar()
 		{
 			var nomeLoja = document.forms["CadastroLoja"]["nomeDaLoja"].value;
