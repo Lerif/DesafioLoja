@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <link href="/FrontEndLojaGeladeira/homestyle.css" rel="stylesheet"
@@ -9,18 +9,24 @@
 <title>Bem Vindo</title>
 </head>
 <body>
-	<form action="CarregaLojas" id="id" method="post">
+	<div align="center">
+		<div align="right">
+			<form id="cadastrarLoja" method="post" action="CarregaLojas">
+				<input  id="cadastrarLojaBotaoId" value="Cadastrar loja" type="button" onclick="chamaCarregaLojas()" />
+			</form>
+		</div>
+		
 		<h1>Bem vindo ao Sistema Gelux</h1>
-	</form>
-	
-	<button onclick="chamaCarregaLojas()">Cadastrar nova loja</button>
-	<br>
-	<a href="Busca.jsp">Busca</a>
-	<br>
+		<br>
+		
+		<input type="text" name="procurarGeladeiras" id="campoProcurarGeladeirasId"  width="200" maxlength="256" dir="auto" placeholder="Procurar Geladeiras"/>
+		<input id="imagemProcurarGeladeiraId" type="button" />
+		<br>
+	</div>
 </body>
 <script>
 	function chamaCarregaLojas() {
-		document.getElementById("id").submit();
+		document.getElementById("cadastrarLoja").submit();
 	}
 </script>
 </html>

@@ -30,8 +30,8 @@
 	</form>
 
 	<div align="center">
-	<button onclick="aviso()">Envie para a tabela!</button>
-	<button onClick="voltar()">Voltar</button>
+	<button onclick="aviso()">Inserir geladeira</button>
+	<button onClick="voltar()">Voltar para tela inicial</button>
 	</div>
 
 	<div align="center">
@@ -62,7 +62,6 @@
 		if (nome == "") {
 			alert("Campo nome obrigatorio");
 			return;
-
 		}
 		if (marca == "") {
 			alert("Campo marca obrigatorio");
@@ -70,10 +69,20 @@
 		}
 		document.getElementById("idCadastroGeladeira").submit();
 	}
+	
 	function voltar() {
-		var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
-
-		if (confirmaVoltar == true) {
+		
+		var nome = document.forms["form1"]["nome"].value;
+		var marca = document.forms["form1"]["marca"].value;
+		var fabricante = document.forms["form1"]["fabricante"].value;
+		
+		if(nome != "" || marca !="" || fabricante !=""){
+			var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
+			if (confirmaVoltar == true) {
+				location.href = "Index.jsp";
+			}	
+		}
+		else{
 			location.href = "Index.jsp";
 		}
 	}

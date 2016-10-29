@@ -18,8 +18,7 @@
 	<br />
 	
 
-	<form name="CadastroLoja" id="formularioCadastro"
-		action="servCaLo" method="post">
+	<form name="CadastroLoja" id="formularioCadastro" action="servCaLo" method="post">
 
 		<!-- DADOS PESSOAIS-->
 		<fieldset>
@@ -87,10 +86,19 @@
 	}
 
 	function voltar() {
-		var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
-
-		if (confirmaVoltar == true) {
-			location.href = "Index.jsp";
+		
+		var nomeLoja = document.forms["CadastroLoja"]["nomeDaLoja"].value;
+		var iconeDaLoja = document.getElementById("idIcone").value;
+		
+		if ( (nomeLoja != "") || (iconeDaLoja != "") ) {
+			var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
+			if (confirmaVoltar == true) {
+				location.href = "Index.jsp";
+			}
+		}
+		else 
+		{
+			location.href = "Index.jsp";	
 		}
 	}
 </script>
