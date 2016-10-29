@@ -43,6 +43,9 @@
 	<br>
 	<br>
 	<div align="center">
+	
+	<form name="CadastroGeladeira" id="formularioGeladeira"
+		action="ServletNomeLojaParaGeladeira" method="post">
 		<table border="1">
 			<tr>
 				<th>Loja</th>
@@ -52,11 +55,14 @@
 			<c:forEach items="${lojas}" var="loja">
 
 				<tr>
-					<td>${loja.nome}</td>
-					<td><img src=${loja.foto } width="18px" height="18px"></td>
+					<td><button name="lojaBotao" onClick="cadastrarGeladeira" value="${loja.nome}"> ${loja.nome}
+					</button></td>
+					
+					<td><img src="${loja.foto}" width="18px" height="18px"></td>
 				</tr>
 			</c:forEach>
 		</table>
+	</form>
 	</div>
 
 </body>
@@ -74,6 +80,10 @@
 		}
 
 		document.getElementById("formularioCadastro").submit();
+	}
+	
+	function cadastrarGeladeira(){
+		document.getElementById("formularioGeladeira").submit();
 	}
 
 	function voltar() {

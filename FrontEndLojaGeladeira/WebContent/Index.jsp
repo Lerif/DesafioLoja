@@ -9,10 +9,18 @@
 <title>Bem Vindo</title>
 </head>
 <body>
-	<h1>Bem vindo ao Sistema Gelux</h1>
-	<p>
-		<a href="CadastroDaLoja.jsp">Cadastrar nova loja</a> <br> 
-		<a href="Busca.jsp">Busca</a> <br>
-		<a href="CadaGela.jsp">Cadastrar Geladeira</a>
+	<form action="CarregaLojas" id="id" method="post">
+		<h1>Bem vindo ao Sistema Gelux</h1>
+	</form>
+	
+	<button onclick="chamaCarregaLojas()">Cadastrar nova loja</button>
+	<br>
+	<a href="Busca.jsp">Busca</a>
+	<br>
 </body>
+<script>
+	function chamaCarregaLojas() {
+		document.getElementById("id").submit();
+	}
+</script>
 </html>

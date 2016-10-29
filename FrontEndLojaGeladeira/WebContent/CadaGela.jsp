@@ -14,6 +14,9 @@
 	<form name="form1" id="idCadastroGeladeira" action="CadastroGela"
 		method="post">
 		<div align="center">
+			<label name="nomeLoja" wrap="hard" value="${nomeLoja}">Loja: ${nomeLoja}</label>
+		</div>
+		<div align="center">
 			<textarea name="nome" wrap="hard" placeholder="Nome da geladeira"></textarea>
 		</div>
 		<div align="center">
@@ -28,6 +31,7 @@
 
 	<div align="center">
 	<button onclick="aviso()">Envie para a tabela!</button>
+	<button onClick="voltar()">Voltar</button>
 	</div>
 
 	<div align="center">
@@ -46,9 +50,6 @@
 			</c:forEach>
 		</table>
 	</div>
-
-
-
 </body>
 </html>
 
@@ -68,5 +69,12 @@
 			return;
 		}
 		document.getElementById("idCadastroGeladeira").submit();
+	}
+	function voltar() {
+		var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
+
+		if (confirmaVoltar == true) {
+			location.href = "Index.jsp";
+		}
 	}
 </script>

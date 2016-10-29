@@ -13,14 +13,5 @@
     <servlet-name>ServletCadastroDeLojas</servlet-name>
     <url-pattern>/CadastroLojas</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
-    <servlet-name>CadastroGela</servlet-name>
-    <servlet-class>Controlador.CadastroGela</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CadastroGela</servlet-name>
-    <url-pattern>/CadastroGeladeiras</url-pattern>
-  </servlet-mapping>
-  
+    
 </web-app>

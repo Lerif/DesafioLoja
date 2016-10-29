@@ -9,22 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import Fachada.Fachada;
 
-@WebServlet("/CadastroGela")
-public class CadastroGela extends HttpServlet {
+/**
+ * Servlet implementation class ServletNomeLojaParaGeladeira
+ */
+@WebServlet("/ServletNomeLojaParaGeladeira")
+public class ServletNomeLojaParaGeladeira extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String nome, marca, fabricante, nomeLoja;
-		nome = request.getParameter("nome");
-		marca = request.getParameter("marca");
-		fabricante = request.getParameter("fabricante");
-		nomeLoja = request.getParameter("nomeLoja");
-				
-		Fachada.criarNovaGeladeira(nome, marca, fabricante);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nomeLoja = request.getParameter("lojaBotao");
 		
 		request.setAttribute("nomeLoja", nomeLoja);
 		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeiras());
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}
+
 }
