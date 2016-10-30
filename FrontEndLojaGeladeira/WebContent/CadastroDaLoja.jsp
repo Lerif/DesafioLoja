@@ -18,20 +18,16 @@
 	<br />
 	
 
-	<form name="CadastroLoja" id="formularioCadastro" action="servCaLo" method="post">
-
-		<!-- DADOS PESSOAIS-->
+	<form name="CadastroLoja" id="formularioCadastro" action="servCaLo" method="post" enctype="multipart/form-data">
 		<fieldset>
-
 			<legend>CADASTRO</legend>
-
 			<table>
 				<tr>
 					<td><label for="nome">Nome: </label></td>
 					<td align="left"><input type="text" name="nomeDaLoja"></td>
 					<td><label for="imagem">Icone da loja:</label></td>
 					<td><input id="idIcone" type="file" name="iconeDaLoja"></td>
-					<td><button onClick="voltar()" >Enviar Foto</button></td>
+					<td><button onClick="voltar()">Enviar Foto</button></td>
 			</table>
 		</fieldset>
 		<br>
@@ -43,8 +39,7 @@
 	<br>
 	<div align="center">
 	
-	<form name="CadastroGeladeira" id="formularioGeladeira"
-		action="ServletNomeLojaParaGeladeira" method="post">
+	<form name="CadastroGeladeira" id="formularioGeladeira" action="ServletNomeLojaParaGeladeira" method="post">
 		<table border="1">
 			<tr>
 				<th>Loja</th>
