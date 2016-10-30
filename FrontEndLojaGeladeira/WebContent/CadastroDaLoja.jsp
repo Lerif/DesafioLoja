@@ -52,7 +52,7 @@
 					<td><button name="lojaBotao" onClick="cadastrarGeladeira" value="${loja.nome}"> ${loja.nome}
 					</button></td>
 					
-					<td><img src="${loja.foto}" width="18px" height="18px"></td>
+					<td><img src="${loja.foto}" width="50px" height="50px"></td>
 				</tr>
 			</c:forEach>
 		</table>
