@@ -27,7 +27,6 @@
 					<td align="left"><input type="text" name="nomeDaLoja"></td>
 					<td><label for="imagem">Icone da loja:</label></td>
 					<td><input id="idIcone" type="file" name="iconeDaLoja"></td>
-					<td><button onClick="voltar()">Enviar Foto</button></td>
 			</table>
 		</fieldset>
 		<br>

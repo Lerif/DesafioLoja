@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="javax.xml.ws.Response"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE>
 <html>
@@ -11,22 +12,28 @@
 <body>
 
 	<h1>Formulario para cadastro de geladeira</h1>
-	<form name="form1" id="idCadastroGeladeira" action="CadastroGela"
-		method="post">
-		<div align="center">
-			<label name="nomeLoja" wrap="hard" value="${nomeLoja}">Loja: ${nomeLoja}</label>
-		</div>
-		<div align="center">
-			<textarea name="nome" wrap="hard" placeholder="Nome da geladeira"></textarea>
-		</div>
-		<div align="center">
-			<textarea name="marca" wrap="hard" placeholder="Marca da geladeira"></textarea>
-		</div>
-		<div align="center">
-			<textarea name="fabricante" wrap="hard"
-				placeholder="Fabricante da geladeira"></textarea>
-		</div>
-		<div align="center"></div>
+	<form name="form1" id="idCadastroGeladeira" action="CadastroGela" method="post">
+		<fieldset>
+		<legend> Cadastrar geladeira </legend>
+			<div align="center">
+				<label>Loja: </label>
+				<input hidden="true" name="nomeDaLoja" value="${nomeLoja}"/>
+				<label> ${nomeLoja} </label>
+			</div>
+			<div align="center">
+				<label>Nome: </label>
+				<input type="text" name="nome" placeholder="Nome da geladeira"/>
+			</div>
+			<div align="center">
+				<lable>Marca:</lable>
+				<input name="marca" wrap="hard" placeholder="Marca da geladeira"/>
+			</div>
+			<div align="center">
+				<lable>Frabricante: </lable>
+				<input name="fabricante" wrap="hard" placeholder="Fabricante da geladeira"/>
+			</div>
+			<div align="center"></div>
+		</fieldset>
 	</form>
 
 	<div align="center">
@@ -52,7 +59,6 @@
 	</div>
 </body>
 </html>
-
 
 <script>
 	function aviso() {

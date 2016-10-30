@@ -15,15 +15,17 @@ public class CadastroGela extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nome, marca, fabricante, nomeLoja;
+		String nome, marca, fabricante, nomeDaLoja;
 		nome = request.getParameter("nome");
 		marca = request.getParameter("marca");
 		fabricante = request.getParameter("fabricante");
-		nomeLoja = request.getParameter("nomeLoja");
+		nomeDaLoja = request.getParameter("nomeDaLoja");
 				
 		Fachada.criarNovaGeladeira(nome, marca, fabricante);
 		
-		request.setAttribute("nomeLoja", nomeLoja);
+		System.out.println("Loja: " + nomeDaLoja);
+		
+		request.setAttribute("nomeLoja", nomeDaLoja);
 		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeiras());
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}
