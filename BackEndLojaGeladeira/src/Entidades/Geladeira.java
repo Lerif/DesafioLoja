@@ -1,9 +1,12 @@
 package Entidades;
 
+import java.util.List;
+
 public class Geladeira {
 	private String nome;
 	private String marca;
 	private String fabricante;
+	private List<String> lista;
 
 	private Geladeira(String nome, String marca, String fabricante) {
 		this.nome = nome;
@@ -38,4 +41,13 @@ public class Geladeira {
 	public void setFabricante(String fabricante) {
 		this.fabricante = fabricante;
 	}
+	
+	public void adicionaCarac(String carac){
+		lista.add(carac);
+	}
+	
+	public void RemoveCarac(String carac){
+		lista.remove(carac);
+	}
+	
 }

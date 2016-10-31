@@ -6,7 +6,7 @@ import Agregadores.LojaComGeladeiras;
 
 public class RepoLojaComGeladeiras {
 
-	List<LojaComGeladeiras> repoLojaComGeladeiras = new ArrayList<>();
+	List<LojaComGeladeiras> repoLojaComGeladeiras = new ArrayList<LojaComGeladeiras>();
 	
 	private RepoLojaComGeladeiras(){
 		

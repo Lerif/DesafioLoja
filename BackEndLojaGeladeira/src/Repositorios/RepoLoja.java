@@ -7,7 +7,7 @@ import Entidades.Loja;
 
 public class RepoLoja {
 
-	List<Loja> repoLojas = new ArrayList<>();
+	List<Loja> repoLojas = new ArrayList<Loja>();
 	
 	private RepoLoja (){
 		

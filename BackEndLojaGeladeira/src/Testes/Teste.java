@@ -1,18 +1,11 @@
 package Testes;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
-
-import Agregadores.LojaComGeladeiras;
 import Entidades.Caracteristica;
 import Entidades.Geladeira;
-import Entidades.Loja;
 import Fachada.Fachada;
-import Repositorios.RepoGeladeira;
 
 public class Teste {
 	

@@ -34,42 +34,12 @@ public class LojaComGeladeiras {
 		this.listaGeladeiras = listaGeladeiras;
 	}
 
-	public Boolean Inserir(Geladeira g) {
-		for (Geladeira gel : listaGeladeiras) {
-			if (gel.getNome().equals(g.getNome()))
-				return false;
-		}
+	public void Inserir(Geladeira g) {
 		listaGeladeiras.add(g);
-		return true;
 	}
 
-	public Boolean Remover(String nome) {
-		for (Geladeira gel : listaGeladeiras) {
-			if (gel.getNome().equals(nome))
-				listaGeladeiras.remove(gel);
-			return true;
-		}
-		return false;
-	}
-
-	public Boolean AtualizarMarca(String nome, String marca) {
-		for (Geladeira gel : listaGeladeiras) {
-			if (gel.getNome().equals(nome)) {
-				gel.setMarca(marca);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public Boolean AtualizarFabricante(String nome, String fabricante) {
-		for (Geladeira gel : listaGeladeiras) {
-			if (gel.getNome().equals(nome)) {
-				gel.setFabricante(fabricante);
-				return true;
-			}
-		}
-		return false;
+	public void Remover(Geladeira g) {
+		listaGeladeiras.remove(g);
 	}
 
 }

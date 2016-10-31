@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import Fachada.Fachada;
 
 @WebServlet("/CadastroGela")
@@ -19,10 +18,10 @@ public class CadastroGela extends HttpServlet {
 		nome = request.getParameter("nome");
 		marca = request.getParameter("marca");
 		fabricante = request.getParameter("fabricante");
-		
-		Fachada.criarNovaGeladeira(nome, marca, fabricante);
-		
-		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeiras());
+
+		 Fachada.criarNovaGeladeira(nome, marca, fabricante);
+
+		 request.setAttribute("geladeiras", Fachada.buscarTodasGeladeiras());
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}
 }

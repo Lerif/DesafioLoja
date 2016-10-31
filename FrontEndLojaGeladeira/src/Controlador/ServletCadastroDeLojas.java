@@ -19,14 +19,10 @@ public class ServletCadastroDeLojas extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		
+		Fachada.xablau();
 		Fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), request.getParameter("iconeDaLoja"));
-		atualizarTabelaLojas(request, response);
-	}
-	
-	protected void atualizarTabelaLojas (HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		
 		request.setAttribute("lojas", Fachada.buscarTodasLojas());
 		request.getRequestDispatcher("CadastroDaLoja.jsp").forward(request, response);
 	}

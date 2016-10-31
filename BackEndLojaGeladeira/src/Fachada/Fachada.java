@@ -46,6 +46,9 @@ public class Fachada {
 		return servicoLoja.criarLoja(nome, foto);
 	}
 
+	public static void xablau() {
+	}
+
 	public static Loja buscarLoja(String nome) {
 		return servicoLoja.buscarLoja(nome);
 	}
