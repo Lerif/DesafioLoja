@@ -46,12 +46,6 @@ public class RepoLojaComGeladeiras {
 	
 	public List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
 		
-		/*for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
-			if( repoLojaComGeladeiras.contains(loja)){
-				return lojaComGeladeiras.getListaGeladeiras();
-			}
-		}*/
-		
 		for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
 			if( lojaComGeladeiras.getLoja().getNome().equals(loja.getNome())){
 				return lojaComGeladeiras.getListaGeladeiras();

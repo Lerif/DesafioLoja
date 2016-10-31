@@ -28,13 +28,35 @@
 				<lable>Frabricante: </lable>
 				<input name="fabricante" wrap="hard" placeholder="Fabricante da geladeira"/>
 			</div>
+			<div align="center">
+				<br>
+				<lable>Caracteristicas: </lable>
+				<c:forEach items="${caracteristicas}" var = "caracteristica">
+					<input type="checkbox" name="caracteristica" value="${caracteristica.tipo}"/> ${caracteristica.tipo}
+				</c:forEach>
+			</div>
+			<div align="center">
+				<label>Adicionar nova caracteristica: </label>
+				<input type="text" name="novaCaracteristica" placeholder="Inserir nova caracteristica"/>
+		</div>
 		</fieldset>
+	</form>
+	
+	<form name="formNovaCaracteristica" id="idCadastroGeladeira" method="post" action="ServletNovaCaracteristica">
+	<fieldset>
+	<legend>Nova caracteristica</legend>
+		<div align="center">
+			<label>Adicionar nova caracteristica: </label>
+			<input type="text" name="novaCaracteristica" placeholder="Inserir nova caracteristica"/>
+		</div>
+	</fieldset>
 	</form>
 
 	<div align="center">
-	<button onclick="aviso()">Inserir geladeira</button>
-	<button onClick="voltar()">Voltar para tela inicial</button>
+		<button onclick="aviso()">Inserir geladeira</button>
+		<button onClick="voltar()">Voltar para tela inicial</button>
 	</div>
+	<br>
 
 	<div align="center">
 		<table border="1">

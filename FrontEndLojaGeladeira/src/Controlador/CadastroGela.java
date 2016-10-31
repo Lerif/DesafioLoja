@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Entidades.Caracteristica;
 import Entidades.Geladeira;
 import Entidades.Loja;
 import Fachada.Fachada;
@@ -25,7 +26,7 @@ public class CadastroGela extends HttpServlet {
 		fabricante = request.getParameter("fabricante");
 		nomeDaLoja = request.getParameter("nomeDaLoja");
 				
-		Geladeira geladeira = Fachada.criarNovaGeladeira(nome, marca, fabricante);
+		Geladeira geladeira = Fachada.criarNovaGeladeira(nome, marca, fabricante, null);
 
 		// Agregando Loja com lista de geladeiras
 		Loja loja = Fachada.buscarUltimaLoja();
@@ -35,6 +36,15 @@ public class CadastroGela extends HttpServlet {
 		List<Geladeira> geladeiras = Fachada.buscarTodasGeladeirasDaLoja(loja);
 		geladeiras.add(geladeira);
 		Fachada.criarNovaLojaComGeladeiras(loja, geladeiras);
+		
+		String novaCaracteristica = request.getParameter("novaCaracteristica");
+		Fachada.criarNovaCaracteristica(novaCaracteristica, true);
+		
+		for (Caracteristica caracteristica : Fachada.buscarTodasCaracteristicas()){
+			System.out.println("car: " + caracteristica);
+		}
+		
+		request.setAttribute("caracteristicas", Fachada.buscarTodasCaracteristicas());
 		
 		request.setAttribute("nomeLoja", nomeDaLoja);
 		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeirasDaLoja(loja));

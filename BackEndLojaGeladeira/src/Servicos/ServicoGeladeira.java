@@ -2,6 +2,7 @@ package Servicos;
 
 import java.util.List;
 
+import Entidades.Caracteristica;
 import Entidades.Geladeira;
 import Fabricas.FabricaGeladeira;
 import Repositorios.RepoGeladeira;
@@ -18,9 +19,8 @@ public class ServicoGeladeira {
 		return new ServicoGeladeira();
 	}
 
-	public static Geladeira criarGeladeira(String nome, String marca, String fabricante) {
-		return repoGeladeira.inserir(FabricaGeladeira.nova().retornaGeladeira(nome, marca, fabricante));
-
+	public static Geladeira criarGeladeira(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas) {
+		return repoGeladeira.inserir(FabricaGeladeira.nova().retornaGeladeira(nome, marca, fabricante, caracteristicas));
 	}
 
 	public List<Geladeira> buscarTodasGelardeiras() {

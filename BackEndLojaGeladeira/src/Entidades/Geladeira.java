@@ -1,18 +1,22 @@
 package Entidades;
 
+import java.util.List;
+
 public class Geladeira {
 	private String nome;
 	private String marca;
 	private String fabricante;
+	private List<Caracteristica> caracteristicas;
 
-	private Geladeira(String nome, String marca, String fabricante) {
+	private Geladeira(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas) { 
 		this.nome = nome;
 		this.marca = marca;
 		this.fabricante = fabricante;
+		this.caracteristicas = caracteristicas;
 	}
 
-	public static Geladeira nova(String nome, String marca, String fabricante) {
-		return new Geladeira(nome, marca, fabricante);
+	public static Geladeira nova(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas) {
+		return new Geladeira(nome, marca, fabricante, caracteristicas);
 	}
 
 	public String getNome() {
@@ -38,4 +42,13 @@ public class Geladeira {
 	public void setFabricante(String fabricante) {
 		this.fabricante = fabricante;
 	}
+
+	public List<Caracteristica> getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public void setCaracteristicas(List<Caracteristica> caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
+	
 }

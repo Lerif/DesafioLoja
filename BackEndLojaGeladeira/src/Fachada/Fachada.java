@@ -22,8 +22,8 @@ public class Fachada {
 	 * Servicos de Geladeira
 	 */
 
-	public static Geladeira criarNovaGeladeira(String nome, String marca, String fabricante) {
-		return ServicoGeladeira.criarGeladeira(nome, marca, fabricante);
+	public static Geladeira criarNovaGeladeira(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas) {
+		return ServicoGeladeira.criarGeladeira(nome, marca, fabricante, caracteristicas);
 	}
 
 	public static List<Geladeira> buscarGeladeira(String nomeDaGeladeira) {
