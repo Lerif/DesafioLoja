@@ -9,33 +9,34 @@ import Fabricas.FabricaLojaComGeladeiras;
 import Repositorios.RepoLojaComGeladeiras;
 
 public class ServicoLojaComGeladeiras {
-	
-	public RepoLojaComGeladeiras repoLojaComGeladeiras = RepoLojaComGeladeiras.novo();
 
-	private ServicoLojaComGeladeiras(){
+	static private RepoLojaComGeladeiras repoLojaComGeladeiras = RepoLojaComGeladeiras.novo();
+
+	private ServicoLojaComGeladeiras() {
 	}
-	
-	public static ServicoLojaComGeladeiras novo(){
+
+	public static ServicoLojaComGeladeiras novo() {
 		return new ServicoLojaComGeladeiras();
 	}
-	
-	public LojaComGeladeiras criarLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras){
-		FabricaLojaComGeladeiras fabricaLojaComGeladeiras = FabricaLojaComGeladeiras.nova();
-		LojaComGeladeiras lojaComGeladeiras = fabricaLojaComGeladeiras.retornaLojaComGeladeiras(loja, geladeiras);
-		repoLojaComGeladeiras.inserir(lojaComGeladeiras);
-		return lojaComGeladeiras;
+
+	public void criarLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras) {
+		repoLojaComGeladeiras.inserir(FabricaLojaComGeladeiras.nova().retornaLojaComGeladeiras(loja, geladeiras));
 	}
-	
-	public List<LojaComGeladeiras> buscarTodasLojaComGeladeiras(){
+
+	public List<LojaComGeladeiras> buscarTodasLojaComGeladeiras() {
 		return repoLojaComGeladeiras.selecionarTudo();
 	}
-	
-	public LojaComGeladeiras buscarLojaComGeladeira(LojaComGeladeiras nomeDaLojaComGeladeiras){
-		return repoLojaComGeladeiras.selecionar(nomeDaLojaComGeladeiras);
+
+	public void excluirLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras) {
+		repoLojaComGeladeiras.remover(lojaComGeladeiras);
 	}
-	
-	public boolean excluirLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras){
-		return repoLojaComGeladeiras.remover(lojaComGeladeiras);
+
+	public List<Geladeira> buscaPalavra(String busca) {
+		return RepoLojaComGeladeiras.buscarUmaPalavraGenerica(busca);
 	}
-	
+
+	public List<Geladeira> buscaPalavraporLoja(String busca, Loja loja) {
+		return RepoLojaComGeladeiras.buscarUmaPalavraGenericaLoja(busca, loja);
+	}
+
 }

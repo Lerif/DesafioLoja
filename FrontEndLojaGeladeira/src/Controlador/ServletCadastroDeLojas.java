@@ -21,7 +21,6 @@ public class ServletCadastroDeLojas extends HttpServlet {
 			throws ServletException, IOException {
 
 		
-		Fachada.xablau();
 		Fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), request.getParameter("iconeDaLoja"));
 		request.setAttribute("lojas", Fachada.buscarTodasLojas());
 		request.getRequestDispatcher("CadastroDaLoja.jsp").forward(request, response);

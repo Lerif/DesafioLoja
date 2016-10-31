@@ -11,7 +11,6 @@ public class ServicoGeladeira {
 	static private RepoGeladeira repoGeladeira = RepoGeladeira.novo();
 
 	private ServicoGeladeira() {
-
 	}
 
 	public static ServicoGeladeira novo() {
@@ -27,11 +26,7 @@ public class ServicoGeladeira {
 		return repoGeladeira.selecionarTudo();
 	}
 
-	public List<Geladeira> buscarGeladeira(String nomeDaGeladeira) {
-		return repoGeladeira.selecionar(nomeDaGeladeira);
-	}
-
-	public boolean excluirGeladeira(Geladeira geladeira) {
-		return repoGeladeira.remover(geladeira);
+	public void excluirGeladeira(Geladeira geladeira) {
+		repoGeladeira.remover(geladeira);
 	}
 }

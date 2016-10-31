@@ -7,41 +7,24 @@ import Entidades.Geladeira;
 
 public class RepoGeladeira {
 
-	public List<Geladeira> repoGeladeiras = new ArrayList<Geladeira>();
-	
-	private  RepoGeladeira(){
-		
+	private static List<Geladeira> repoGeladeiras = new ArrayList<Geladeira>();
+
+	private RepoGeladeira() {
 	}
-	
-	public static RepoGeladeira novo(){
+
+	public static RepoGeladeira novo() {
 		return new RepoGeladeira();
 	}
-	
-	public boolean inserir (Geladeira geladeira){
-		
-		if (repoGeladeiras.add(geladeira)){
-			return true;
-		}
-		return false;
+
+	public boolean inserir(Geladeira geladeira) {
+		return repoGeladeiras.add(geladeira);
 	}
-	
-	public List<Geladeira> selecionar(String nomeDaGeladeiraParaSelecionar){
-		
-		List<Geladeira> geladeirasComNomeSelecionado = new ArrayList<Geladeira>();
-		
-		for(Geladeira geladeira : repoGeladeiras){
-			if(geladeira.equals(nomeDaGeladeiraParaSelecionar)){
-				geladeirasComNomeSelecionado.add(geladeira);
-			}
-		}
-		return geladeirasComNomeSelecionado;
-	}
-	
-	public List<Geladeira> selecionarTudo(){
-		return repoGeladeiras;
-	}
-	
-	public boolean remover(Geladeira geladeiraParaRemover){
+
+	public boolean remover(Geladeira geladeiraParaRemover) {
 		return repoGeladeiras.remove(geladeiraParaRemover);
+	}
+
+	public List<Geladeira> selecionarTudo() {
+		return repoGeladeiras;
 	}
 }
