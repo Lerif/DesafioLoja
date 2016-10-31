@@ -18,8 +18,8 @@ public class ServicoGeladeira {
 		return new ServicoGeladeira();
 	}
 
-	public static void criarGeladeira(String nome, String marca, String fabricante) {
-		repoGeladeira.inserir(FabricaGeladeira.nova().retornaGeladeira(nome, marca, fabricante));
+	public static Geladeira criarGeladeira(String nome, String marca, String fabricante) {
+		return repoGeladeira.inserir(FabricaGeladeira.nova().retornaGeladeira(nome, marca, fabricante));
 
 	}
 

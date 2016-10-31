@@ -3,6 +3,7 @@
 	<name>FrontEndLojaGeladeira</name>
 	<comment></comment>
 	<projects>
+		<project>BackEndLojaGeladeira</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

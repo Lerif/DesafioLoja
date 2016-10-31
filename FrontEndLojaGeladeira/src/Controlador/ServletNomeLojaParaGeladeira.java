@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Entidades.Loja;
 import Fachada.Fachada;
 
 /**
@@ -19,9 +20,13 @@ public class ServletNomeLojaParaGeladeira extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeLoja = request.getParameter("lojaBotao");
 		
+		System.out.println("nome Loja: " + nomeLoja);
 		request.setAttribute("nomeLoja", nomeLoja);
-		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeiras());
+		
+		Loja loja = Fachada.buscarLoja(nomeLoja); 
+		System.out.println("nome Loja objeto: " + loja.getNome());
+		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeirasDaLoja(loja));
+		
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}
-
 }

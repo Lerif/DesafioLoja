@@ -14,25 +14,20 @@
 	<h1>Formulario para cadastro de geladeira</h1>
 	<form name="form1" id="idCadastroGeladeira" action="CadastroGela" method="post">
 		<fieldset>
-		<legend> Cadastrar geladeira </legend>
-			<div align="center">
-				<label>Loja: </label>
-				<input hidden="true" name="nomeDaLoja" value="${nomeLoja}"/>
-				<label> ${nomeLoja} </label>
-			</div>
+		<legend> 
+			<input hidden="true" name="nomeDaLoja" value="${nomeLoja}"/>
+			<label> ${nomeLoja} </label> 
+		</legend>
 			<div align="center">
 				<label>Nome: </label>
 				<input type="text" name="nome" placeholder="Nome da geladeira"/>
-			</div>
-			<div align="center">
+				
 				<lable>Marca:</lable>
 				<input name="marca" wrap="hard" placeholder="Marca da geladeira"/>
-			</div>
-			<div align="center">
+				
 				<lable>Frabricante: </lable>
 				<input name="fabricante" wrap="hard" placeholder="Fabricante da geladeira"/>
 			</div>
-			<div align="center"></div>
 		</fieldset>
 	</form>
 

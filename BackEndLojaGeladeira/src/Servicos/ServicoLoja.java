@@ -24,6 +24,10 @@ public class ServicoLoja {
 		return loja;
 	}
 	
+	public Loja buscarUltimaLoja(){
+		return repoLoja.buscarUltimaLoja();
+	}
+	
 	public List<Loja> buscarTodasLojas(){
 		return repoLoja.selecionarTudo();
 	}

@@ -22,8 +22,8 @@ public class Fachada {
 	 * Servicos de Geladeira
 	 */
 
-	public static void criarNovaGeladeira(String nome, String marca, String fabricante) {
-		ServicoGeladeira.criarGeladeira(nome, marca, fabricante);
+	public static Geladeira criarNovaGeladeira(String nome, String marca, String fabricante) {
+		return ServicoGeladeira.criarGeladeira(nome, marca, fabricante);
 	}
 
 	public static List<Geladeira> buscarGeladeira(String nomeDaGeladeira) {
@@ -57,44 +57,52 @@ public class Fachada {
 	public boolean excluirLoja(Loja loja) {
 		return servicoLoja.excluirLoja(loja);
 	}
+	
+	public static Loja buscarUltimaLoja(){
+		return servicoLoja.buscarUltimaLoja();
+	}
 
 	/**
 	 * Servicos de LojaComGeladeira
 	 */
 
-	public LojaComGeladeiras criarNovaLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras) {
+	public static LojaComGeladeiras criarNovaLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras) {
 		return servicoLojaComGeladeiras.criarLojaComGeladeiras(loja, geladeiras);
 	}
 
-	public LojaComGeladeiras buscarLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras) {
+	public static LojaComGeladeiras buscarLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras) {
 		return servicoLojaComGeladeiras.buscarLojaComGeladeira(lojaComGeladeiras);
 	}
 
-	public List<LojaComGeladeiras> buscarTodasLojasComGeladeiras() {
+	public static List<LojaComGeladeiras> buscarTodasLojasComGeladeiras() {
 		return servicoLojaComGeladeiras.buscarTodasLojaComGeladeiras();
 	}
 
-	public boolean excluirLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras) {
+	public static boolean excluirLojaComGeladeiras(LojaComGeladeiras lojaComGeladeiras) {
 		return servicoLojaComGeladeiras.excluirLojaComGeladeiras(lojaComGeladeiras);
+	}
+	
+	public static List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+		return servicoLojaComGeladeiras.buscarTodasGeladeirasDaLoja(loja);
 	}
 
 	/**
 	 * Servicos de Caracteristica
 	 */
 
-	public Caracteristica criarNovaCaracteristica(String tipo, boolean existe) {
+	public static Caracteristica criarNovaCaracteristica(String tipo, boolean existe) {
 		return servicoCaracteristica.criarCaracteristica(tipo, existe);
 	}
 
-	public Caracteristica buscarCaracteristica(String caracteristica) {
+	public static Caracteristica buscarCaracteristica(String caracteristica) {
 		return servicoCaracteristica.buscarCaracteristica(caracteristica);
 	}
 
-	public List<Caracteristica> buscarTodasCaracteristicas() {
+	public static List<Caracteristica> buscarTodasCaracteristicas() {
 		return servicoCaracteristica.buscarTodasCaracteristica();
 	}
 
-	public boolean excluirCaracteristica(Caracteristica caracteristica) {
+	public static boolean excluirCaracteristica(Caracteristica caracteristica) {
 		return servicoCaracteristica.excluirCaracteristica(caracteristica);
 	}
 }

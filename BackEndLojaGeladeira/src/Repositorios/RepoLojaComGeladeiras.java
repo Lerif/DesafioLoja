@@ -3,10 +3,12 @@ package Repositorios;
 import java.util.ArrayList;
 import java.util.List;
 import Agregadores.LojaComGeladeiras;
+import Entidades.Geladeira;
+import Entidades.Loja;
 
 public class RepoLojaComGeladeiras {
 
-	List<LojaComGeladeiras> repoLojaComGeladeiras = new ArrayList<>();
+	List<LojaComGeladeiras> repoLojaComGeladeiras = new ArrayList<LojaComGeladeiras>();
 	
 	private RepoLojaComGeladeiras(){
 		
@@ -40,5 +42,21 @@ public class RepoLojaComGeladeiras {
 	
 	public boolean remover(LojaComGeladeiras lojaComGeladeirasParaRemover){
 		return repoLojaComGeladeiras.remove(lojaComGeladeirasParaRemover);
+	}
+	
+	public List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+		
+		/*for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
+			if( repoLojaComGeladeiras.contains(loja)){
+				return lojaComGeladeiras.getListaGeladeiras();
+			}
+		}*/
+		
+		for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
+			if( lojaComGeladeiras.getLoja().getNome().equals(loja.getNome())){
+				return lojaComGeladeiras.getListaGeladeiras();
+			}
+		}
+		return new ArrayList<Geladeira>();
 	}
 }

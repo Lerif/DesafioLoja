@@ -7,15 +7,16 @@
 <!DOCTYPE>
 <html>
 <head>
+<link href="/FrontEndLojaGeladeira/homestyle.css" rel="stylesheet"
+	type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de Lojas</title>
 </head>
 <body>
 	<h1 align="center">Cadastro de Loja</h1>
 
-	<h2 align="center">Preencha o formulário abaixo para sua cadastrar
-		loja</h2>
-	<br />
+	<h2 align="center">Preencha o formulário abaixo para sua cadastrar loja </h2>
+	<br/>
 	
 
 	<form name="CadastroLoja" id="formularioCadastro" action="servCaLo" method="post" enctype="multipart/form-data">
@@ -80,7 +81,6 @@
 	}
 
 	function voltar() {
-		
 		var nomeLoja = document.forms["CadastroLoja"]["nomeDaLoja"].value;
 		var iconeDaLoja = document.getElementById("idIcone").value;
 		

@@ -7,7 +7,7 @@ import Entidades.Loja;
 
 public class RepoLoja {
 
-	List<Loja> repoLojas = new ArrayList<>();
+	List<Loja> repoLojas = new ArrayList<Loja>();
 	
 	private RepoLoja (){
 		
@@ -25,10 +25,14 @@ public class RepoLoja {
 		return false;
 	}
 	
+	public Loja buscarUltimaLoja(){
+		return repoLojas.get(repoLojas.size()-1);
+	}
+	
 	public Loja selecionar(String lojaParaSelecionar){
 		
 		for (Loja loja : repoLojas){
-			if(repoLojas.equals(lojaParaSelecionar)){
+			if(loja.getNome().equals(lojaParaSelecionar)){
 				return loja;
 			}
 		}

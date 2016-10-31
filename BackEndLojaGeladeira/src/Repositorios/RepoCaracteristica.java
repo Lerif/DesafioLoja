@@ -6,7 +6,7 @@ import Entidades.Caracteristica;
 
 public class RepoCaracteristica {
 	
-	public List<Caracteristica> repoCaracteristica = new ArrayList<>();
+	public List<Caracteristica> repoCaracteristica = new ArrayList<Caracteristica>();
 	
 	private RepoCaracteristica(){
 	}

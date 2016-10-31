@@ -2,6 +2,9 @@
     <wb-module deploy-name="FrontEndLojaGeladeira">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="BackEndLojaGeladeira.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/BackEndLojaGeladeira/BackEndLojaGeladeira">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="FrontEndLojaGeladeira"/>
         <property name="java-output-path" value="/FrontEndLojaGeladeira/build/classes"/>
     </wb-module>

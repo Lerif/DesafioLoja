@@ -17,12 +17,12 @@ public class RepoGeladeira {
 		return new RepoGeladeira();
 	}
 	
-	public boolean inserir (Geladeira geladeira){
+	public Geladeira inserir (Geladeira geladeira){
 		
 		if (repoGeladeiras.add(geladeira)){
-			return true;
+			return geladeira;
 		}
-		return false;
+		return null;
 	}
 	
 	public List<Geladeira> selecionar(String nomeDaGeladeiraParaSelecionar){

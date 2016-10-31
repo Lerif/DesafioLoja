@@ -26,6 +26,10 @@ public class ServicoLojaComGeladeiras {
 		return lojaComGeladeiras;
 	}
 	
+	public List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+		return repoLojaComGeladeiras.buscarTodasGeladeirasDaLoja(loja);
+	}
+	
 	public List<LojaComGeladeiras> buscarTodasLojaComGeladeiras(){
 		return repoLojaComGeladeiras.selecionarTudo();
 	}
