@@ -11,12 +11,12 @@
 </head>
 <body>
 
-	<h1>Formulario para cadastro de geladeira</h1>
+	<h1>Formulario para cadastro de geladeiras</h1>
 	<form name="form1" id="idCadastroGeladeira" action="CadastroGela" method="post">
 		<fieldset>
 		<legend> 
 			<input hidden="true" name="nomeDaLoja" value="${nomeLoja}"/>
-			<label> ${nomeLoja} </label> 
+			<label> Loja: ${nomeLoja} </label> 
 		</legend>
 			<div align="center">
 				<label>Nome: </label>
@@ -30,26 +30,10 @@
 			</div>
 			<div align="center">
 				<br>
-				<lable>Caracteristicas: </lable>
-				<c:forEach items="${caracteristicas}" var = "caracteristica">
-					<input type="checkbox" name="caracteristica" value="${caracteristica.tipo}"/> ${caracteristica.tipo}
-				</c:forEach>
+				<label>Adicionar caracteristicas: </label>
+				<input size="77" type="text" name="novaCaracteristica" placeholder="Separe por virgulas. ex: frost-free, branca, etc..."/>
 			</div>
-			<div align="center">
-				<label>Adicionar nova caracteristica: </label>
-				<input type="text" name="novaCaracteristica" placeholder="Inserir nova caracteristica"/>
-		</div>
 		</fieldset>
-	</form>
-	
-	<form name="formNovaCaracteristica" id="idCadastroGeladeira" method="post" action="ServletNovaCaracteristica">
-	<fieldset>
-	<legend>Nova caracteristica</legend>
-		<div align="center">
-			<label>Adicionar nova caracteristica: </label>
-			<input type="text" name="novaCaracteristica" placeholder="Inserir nova caracteristica"/>
-		</div>
-	</fieldset>
 	</form>
 
 	<div align="center">
@@ -64,12 +48,18 @@
 				<th align="center"><p>Nome</p></th>
 				<th align="center"><p>Marca</p></th>
 				<th align="center"><p>Fabricante</p></th>
+				<th align="center"><p>Caracteristicas</p></th>
 			</tr>
 			<c:forEach items="${geladeiras}" var="geladeira">
 				<tr>
 					<td align="center">${geladeira.nome}</td>
 					<td align="center">${geladeira.marca}</td>
 					<td align="center">${geladeira.fabricante}</td>
+					
+					<c:forEach items="${caracteristicas}" var="caracteristica">
+						<td align="center">${caracteristica.tipo}</td>
+					</c:forEach>
+					
 				</tr>
 			</c:forEach>
 		</table>

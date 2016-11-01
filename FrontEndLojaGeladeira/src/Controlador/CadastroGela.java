@@ -30,19 +30,12 @@ public class CadastroGela extends HttpServlet {
 
 		// Agregando Loja com lista de geladeiras
 		Loja loja = Fachada.buscarUltimaLoja();
-		System.out.println("Loja: " + loja.getNome());
-		System.out.println("Icon: " + loja.getFoto());
-		
 		List<Geladeira> geladeiras = Fachada.buscarTodasGeladeirasDaLoja(loja);
 		geladeiras.add(geladeira);
 		Fachada.criarNovaLojaComGeladeiras(loja, geladeiras);
 		
 		String novaCaracteristica = request.getParameter("novaCaracteristica");
 		Fachada.criarNovaCaracteristica(novaCaracteristica, true);
-		
-		for (Caracteristica caracteristica : Fachada.buscarTodasCaracteristicas()){
-			System.out.println("car: " + caracteristica);
-		}
 		
 		request.setAttribute("caracteristicas", Fachada.buscarTodasCaracteristicas());
 		

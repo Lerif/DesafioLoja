@@ -23,10 +23,6 @@ public class ServletNovaCaracteristica extends HttpServlet {
 		String novaCaracteristica = request.getParameter("novaCaracteristica");
 		Fachada.criarNovaCaracteristica(novaCaracteristica, true);
 		
-		for (Caracteristica caracteristica : Fachada.buscarTodasCaracteristicas()){
-			System.out.println("car: " + caracteristica);
-		}
-		
 		request.setAttribute("caracteristicas", Fachada.buscarTodasCaracteristicas());
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}
