@@ -31,7 +31,11 @@ public class Fachada {
 	}
 
 	public static List<Geladeira> buscarTodasGeladeiras() {
-		return servicoGeladeira.buscarTodasGelardeiras();
+		return servicoGeladeira.buscarTodasGeladeiras();
+	}
+	
+	public static List<Caracteristica> buscarTodasCaracteristicasDaGeladeira(String nomeGeladeira){
+		return servicoGeladeira.buscarTodasCaracteristicasDaGeladeira(nomeGeladeira);
 	}
 
 	public boolean excluirGeladeira(Geladeira geladeira) {
@@ -82,7 +86,7 @@ public class Fachada {
 		return servicoLojaComGeladeiras.excluirLojaComGeladeiras(lojaComGeladeiras);
 	}
 	
-	public static List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+	public static List<Geladeira> buscarTodasGeladeirasDaLoja(String loja){
 		return servicoLojaComGeladeiras.buscarTodasGeladeirasDaLoja(loja);
 	}
 

@@ -22,8 +22,12 @@ public class ServicoGeladeira {
 	public static Geladeira criarGeladeira(String nome, String marca, String fabricante, List<Caracteristica> caracteristicas) {
 		return repoGeladeira.inserir(FabricaGeladeira.nova().retornaGeladeira(nome, marca, fabricante, caracteristicas));
 	}
+	
+	public List<Caracteristica> buscarTodasCaracteristicasDaGeladeira(String geladeira){
+		return repoGeladeira.buscarTodasCaracteristicasDaGeladeira(geladeira);
+	}
 
-	public List<Geladeira> buscarTodasGelardeiras() {
+	public List<Geladeira> buscarTodasGeladeiras() {
 		return repoGeladeira.selecionarTudo();
 	}
 

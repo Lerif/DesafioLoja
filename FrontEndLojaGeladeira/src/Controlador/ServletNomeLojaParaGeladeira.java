@@ -20,12 +20,10 @@ public class ServletNomeLojaParaGeladeira extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeLoja = request.getParameter("lojaBotao");
 		
-		System.out.println("nome Loja: " + nomeLoja);
 		request.setAttribute("nomeLoja", nomeLoja);
 		
 		Loja loja = Fachada.buscarLoja(nomeLoja); 
-		System.out.println("nome Loja objeto: " + loja.getNome());
-		request.setAttribute("geladeiras", Fachada.buscarTodasGeladeirasDaLoja(loja));
+		request.setAttribute("todasGeladeirasDaLoja", Fachada.buscarTodasGeladeirasDaLoja(loja.getNome()));
 		
 		request.getRequestDispatcher("CadaGela.jsp").forward(request, response);
 	}

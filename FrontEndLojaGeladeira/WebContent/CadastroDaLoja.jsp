@@ -47,7 +47,6 @@
 			</tr>
 
 			<c:forEach items="${lojas}" var="loja">
-
 				<tr>
 					<td><button name="lojaBotao" onClick="cadastrarGeladeira" value="${loja.nome}"> ${loja.nome}
 					</button></td>

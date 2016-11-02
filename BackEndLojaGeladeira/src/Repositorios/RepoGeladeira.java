@@ -3,6 +3,7 @@ package Repositorios;
 import java.util.ArrayList;
 import java.util.List;
 
+import Entidades.Caracteristica;
 import Entidades.Geladeira;
 
 public class RepoGeladeira {
@@ -24,6 +25,17 @@ public class RepoGeladeira {
 		}
 		return null;
 	}
+	
+	public List<Caracteristica> buscarTodasCaracteristicasDaGeladeira(String nomeGeladeira){
+		
+		for(Geladeira geladeira : repoGeladeiras){
+			if(geladeira.getNome().equals(nomeGeladeira)){
+				return geladeira.getCaracteristicas();
+			}
+		}
+		return new ArrayList<Caracteristica>();
+	}
+	
 	
 	public List<Geladeira> selecionar(String nomeDaGeladeiraParaSelecionar){
 		

@@ -19,14 +19,26 @@ public class ServicoLojaComGeladeiras {
 		return new ServicoLojaComGeladeiras();
 	}
 	
+	/**
+	 * Procura Lojas com mesmo nome se nao existir criar novo agregador de loja com lista de geladerias,
+	 * se existir update com lista de geladeiras nova 
+	 */
 	public LojaComGeladeiras criarLojaComGeladeiras(Loja loja, List<Geladeira> geladeiras){
+		
+		for(LojaComGeladeiras verificandoLojaComGeladeiras : repoLojaComGeladeiras.selecionarTudo()){
+			if(verificandoLojaComGeladeiras.getLoja().getNome().equals(loja.getNome())){
+				verificandoLojaComGeladeiras.setListaGeladeiras(geladeiras);
+				return verificandoLojaComGeladeiras;
+			}
+		}
+		
 		FabricaLojaComGeladeiras fabricaLojaComGeladeiras = FabricaLojaComGeladeiras.nova();
 		LojaComGeladeiras lojaComGeladeiras = fabricaLojaComGeladeiras.retornaLojaComGeladeiras(loja, geladeiras);
 		repoLojaComGeladeiras.inserir(lojaComGeladeiras);
 		return lojaComGeladeiras;
 	}
 	
-	public List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+	public List<Geladeira> buscarTodasGeladeirasDaLoja(String loja){
 		return repoLojaComGeladeiras.buscarTodasGeladeirasDaLoja(loja);
 	}
 	

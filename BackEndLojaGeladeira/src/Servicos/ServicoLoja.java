@@ -17,7 +17,21 @@ public class ServicoLoja {
 		return new ServicoLoja();
 	}
 	
+	/**
+	 * Primeiro verifica se existe alguma loja com o mesmo nome. Se existir 
+	 * nao deixar criar, Se nao existir cria.
+	 * retorno:
+	 * Retorna um objeto Loja caso nao exista uma loja criada com o mesmo nome.
+	 * Retorna null caso ja tenho uma loja com o mesmo nome.
+	 */
 	public Loja criarLoja(String nome, String foto){
+		
+		for (Loja verificandoLoja : repoLoja.selecionarTudo()){
+			if(verificandoLoja.getNome().equals(nome)){
+				return null;
+			}
+		}
+		
 		FabricaLoja fabricaLoja = FabricaLoja.nova();
 		Loja loja = fabricaLoja.retornaLoja(nome, foto);
 		repoLoja.inserir(loja);

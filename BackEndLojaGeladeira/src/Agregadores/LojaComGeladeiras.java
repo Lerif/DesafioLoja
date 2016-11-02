@@ -51,7 +51,7 @@ public class LojaComGeladeiras {
 		}
 		return false;
 	}
-
+	
 	public Boolean AtualizarMarca(String nome, String marca) {
 		for (Geladeira gel : listaGeladeiras) {
 			if (gel.getNome().equals(nome)) {

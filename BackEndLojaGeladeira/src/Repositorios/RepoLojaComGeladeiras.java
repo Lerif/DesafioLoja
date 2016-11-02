@@ -44,10 +44,10 @@ public class RepoLojaComGeladeiras {
 		return repoLojaComGeladeiras.remove(lojaComGeladeirasParaRemover);
 	}
 	
-	public List<Geladeira> buscarTodasGeladeirasDaLoja(Loja loja){
+	public List<Geladeira> buscarTodasGeladeirasDaLoja(String loja){
 		
 		for(LojaComGeladeiras lojaComGeladeiras : repoLojaComGeladeiras){
-			if( lojaComGeladeiras.getLoja().getNome().equals(loja.getNome())){
+			if( lojaComGeladeiras.getLoja().getNome().equals(loja)){
 				return lojaComGeladeiras.getListaGeladeiras();
 			}
 		}

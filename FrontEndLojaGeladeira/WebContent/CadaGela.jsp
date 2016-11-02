@@ -25,7 +25,7 @@
 				<lable>Marca:</lable>
 				<input name="marca" wrap="hard" placeholder="Marca da geladeira"/>
 				
-				<lable>Frabricante: </lable>
+				<lable>Fabricante: </lable>
 				<input name="fabricante" wrap="hard" placeholder="Fabricante da geladeira"/>
 			</div>
 			<div align="center">
@@ -38,7 +38,10 @@
 
 	<div align="center">
 		<button onclick="aviso()">Inserir geladeira</button>
-		<button onClick="voltar()">Voltar para tela inicial</button>
+		<button onClick="voltarInicial()">Voltar para tela inicial</button>
+		<form id="cadastrarLoja" method="post" action="CarregaLojas">
+			<input  id="voltarLojaBotaoId" value="Voltar para tela de lojas" type="button" onclick="voltarLojas()" />
+		</form>
 	</div>
 	<br>
 
@@ -50,16 +53,15 @@
 				<th align="center"><p>Fabricante</p></th>
 				<th align="center"><p>Caracteristicas</p></th>
 			</tr>
-			<c:forEach items="${geladeiras}" var="geladeira">
+			<c:forEach items="${todasGeladeirasDaLoja}" var="geladeira">
 				<tr>
 					<td align="center">${geladeira.nome}</td>
 					<td align="center">${geladeira.marca}</td>
 					<td align="center">${geladeira.fabricante}</td>
 					
-					<c:forEach items="${caracteristicas}" var="caracteristica">
+					<c:forEach items="${geladeira.caracteristicas}" var="caracteristica">
 						<td align="center">${caracteristica.tipo}</td>
 					</c:forEach>
-					
 				</tr>
 			</c:forEach>
 		</table>
@@ -72,18 +74,40 @@
 		var nome = document.forms["form1"]["nome"].value;
 		var marca = document.forms["form1"]["marca"].value;
 		var fabricante = document.forms["form1"]["fabricante"].value;
+		var fabricante = document.forms["form1"]["fabricante"].value;
 		if (nome == "") {
-			alert("Campo nome obrigatorio");
+			alert("Campo Nome obrigatorio");
 			return;
 		}
 		if (marca == "") {
-			alert("Campo marca obrigatorio");
+			alert("Campo Marca obrigatorio");
+			return;
+		}
+		if (fabricante == "") {
+			alert("Campo Fabricante obrigatorio");
 			return;
 		}
 		document.getElementById("idCadastroGeladeira").submit();
 	}
 	
-	function voltar() {
+	function voltarLojas() {
+		
+		var nome = document.forms["form1"]["nome"].value;
+		var marca = document.forms["form1"]["marca"].value;
+		var fabricante = document.forms["form1"]["fabricante"].value;
+		
+		if(nome != "" || marca !="" || fabricante !=""){
+			var confirmaVoltar = confirm("Voltando perdera todos dados digitados.\nTem certeza que deseja voltar ?");
+			if (confirmaVoltar == true) {
+				document.getElementById("cadastrarLoja").submit();
+			}	
+		}
+		else{
+			document.getElementById("cadastrarLoja").submit();
+		}
+	}
+	
+	function voltarInical() {
 		
 		var nome = document.forms["form1"]["nome"].value;
 		var marca = document.forms["form1"]["marca"].value;
