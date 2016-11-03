@@ -15,7 +15,7 @@
 <body>
 	<h1 align="center">Cadastro de Loja</h1>
 
-	<h2 align="center">Preencha o formulário abaixo para sua cadastrar loja </h2>
+	<h2 align="center">Preencha o formulário abaixo para cadastrar sua loja </h2>
 	<br/>
 	
 
@@ -25,9 +25,11 @@
 			<table>
 				<tr>
 					<td><label for="nome">Nome: </label></td>
+					
 					<td align="left"><input type="text" name="nomeDaLoja"></td>
 					<td><label for="imagem">Icone da loja:</label></td>
 					<td><input id="idIcone" type="file" name="iconeDaLoja"></td>
+				</tr>
 			</table>
 		</fieldset>
 		<br>
@@ -57,9 +59,9 @@
 		</table>
 	</form>
 	</div>
-
 </body>
 <script>
+
 	function cadastrar() {
 		var nomeLoja = document.forms["CadastroLoja"]["nomeDaLoja"].value;
 		var iconeDaLoja = document.getElementById("idIcone").value;
@@ -95,5 +97,4 @@
 		}
 	}
 </script>
-
 </html>

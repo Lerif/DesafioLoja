@@ -2,6 +2,7 @@ package Controlador;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -32,7 +33,12 @@ public class ServletCadastroDeLojas extends HttpServlet {
 			throws ServletException, IOException {
 
 		salvarImagem(request, response);
-		Fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), UPLOAD_DIRETORIO + File.separator + nomeDaImagemLoja);
+		if(Fachada.criarNovaLoja(request.getParameter("nomeDaLoja"), UPLOAD_DIRETORIO + File.separator + nomeDaImagemLoja) == null){
+			request.setAttribute("avisoLojaExistente", true);
+		}
+		else{
+			request.setAttribute("avisoLojaExistente", false);
+		}
 		atualizarTabelaLojas(request, response);
 	}
 
